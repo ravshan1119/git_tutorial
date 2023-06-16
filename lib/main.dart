@@ -31,7 +31,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Column(children: [],),
+      home: Column(children: [
+        Text("___RAVSHAN___",style:  TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w500,
+          color: Colors.cyan
+        ),)
+      ],),
     );
   }
 }
