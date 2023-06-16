@@ -31,7 +31,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Column(children: [],),
+      home: Column(children: [
+        Text('HHH ? <*_*> {__)--->'),
+      ],),
     );
   }
 }
