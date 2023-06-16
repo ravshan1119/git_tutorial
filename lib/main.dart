@@ -14,13 +14,17 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Column(children: [
+
+      home: Column(children: [
+        Text("Abdulaziz"),
+        Text("Tursunov"),
+        Text("Sharif "), 
         Text("___RAVSHAN___",style:  TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.w500,
           color: Colors.cyan
-        ),)
-      ],),
+        ),)],),
+
     );
   }
 }
