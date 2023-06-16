@@ -31,7 +31,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Column(children: [Text("Sharif ")],),
+      home: Column(children: [Text("Abdulaziz"),Text("Tursunov"),Text("Sharif ")],),
+
     );
   }
 }
