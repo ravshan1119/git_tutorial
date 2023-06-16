@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:git_tutorial/ui/screen_4/screen_4.dart';
 
 void main(){
   runApp(MyApp());
@@ -9,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: FourthScreen(),
+    );
   }
 }
