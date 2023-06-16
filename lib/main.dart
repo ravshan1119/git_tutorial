@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Column(children: [
+        Text("Nurmuxammad Zoyidov"),
         Text("Abdulaziz"),
         Text("Tursunov"),
         Text("Sharif "), 
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
           fontWeight: FontWeight.w500,
           color: Colors.cyan
         ),)],),
+
 
     );
   }
