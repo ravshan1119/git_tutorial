@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-
       home: Column(children: [
+         Text('HHH ? <*_*> {__)--->'),
         Text("Nurmuxammad Zoyidov"),
         Text("Abdulaziz"),
         Text("Tursunov"),
@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
           fontWeight: FontWeight.w500,
           color: Colors.cyan
         ),)],),
-
 
     );
   }
