@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -30,15 +31,15 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
 
         SizedBox(
 
-          height: 40,
+          height: 40.h,
 
-          width: 109,
+          width: 109.w,
 
           child: TextField(
 
-            cursorHeight: 22,
+            cursorHeight: 22.h,
 
-            cursorWidth: 1,
+            cursorWidth: 1.w,
 
             keyboardType: TextInputType.number,
 

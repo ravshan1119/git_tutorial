@@ -45,25 +45,13 @@ class _FourthScreenState extends State<FourthScreen> {
                         ),
                       ),
                       Positioned(
-                        bottom: 220.h,
-                        left: -120.w,
-                        right: -120.w,
+                        bottom: -30.h,
+                        left: -240.w,
+                        right: -240.w,
                         child: ClipOval(
                           child: Container(
-                            width: 600.w,
-                            height: 200,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: -400.h,
-                        left: -150.w,
-                        right: -150.w,
-                        child: ClipOval(
-                          child: Container(
-                            width: 900.w,
-                            height: 800.w,
+                            width: 800.w,
+                            height: 450.h,
                             color: Colors.white,
                           ),
                         ),
@@ -106,7 +94,7 @@ class _FourthScreenState extends State<FourthScreen> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 8,),
+                              SizedBox(height: 8.h,),
                               TxtButton(
                                 text: "Highest Price",
                                 onPressed: () {},
