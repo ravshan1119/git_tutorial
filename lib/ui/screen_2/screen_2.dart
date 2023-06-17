@@ -53,7 +53,7 @@ class _Screen2State extends State<Screen2> {
                         color: AppColors.C_4B4B4B,
                       ),
                     ),
-                    SvgPicture.asset(AppImages.bag),
+                    ZoomTapAnimation(child: SvgPicture.asset(AppImages.bag)),
                   ],
                 ),
               ),
@@ -77,7 +77,10 @@ class _Screen2State extends State<Screen2> {
                           borderRadius: BorderRadius.circular(23)),
                       height: 70.h,
                       width: 70.h,
-                      child: Center(child: SvgPicture.asset(AppImages.smile)),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Image.asset(AppImages.smilePNG),
+                      )),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -127,6 +130,7 @@ class _Screen2State extends State<Screen2> {
                 child: GridView(
                   physics: BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 0.80,
                       crossAxisCount: 2),
                   children: [
                     ...List.generate(
@@ -143,5 +147,8 @@ class _Screen2State extends State<Screen2> {
 }
 
 List<Products> products = [
-  Products(),
+  Products(image: AppImages.mango, name: "Mango", kg: "1.9"),
+  Products(image: AppImages.lemon, name: "Lemon", kg: "2.0"),
+  Products(image: AppImages.sweetFruit, name: "Fruit", kg: "3.4"),
+  Products(image: AppImages.strawberry, name: "strawverry", kg: "6.3"),
 ];

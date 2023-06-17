@@ -9,6 +9,7 @@ class AppImages {
   static const String sweetFruit = 'assets/image/sweet_fruit.png';
   static const String select = 'assets/image/select.png';
   static const String noSelect = 'assets/image/noSelect.png';
+  static const String smilePNG = 'assets/image/smile.png';
 
 //svg
   static const String addTovar = 'assets/svg/add_tovar.svg';
