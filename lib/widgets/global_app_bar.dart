@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:git_tutorial/ui/home/home_screen.dart';
 import 'package:git_tutorial/utils/app_colors.dart';
 import 'package:git_tutorial/utils/app_image.dart';
 
@@ -18,7 +19,16 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
       elevation: 0,
       title: ListTile(
         leading: Button(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return AllScreenButton();
+                },
+              ),
+            );
+          },
         ),
         title: Padding(
           padding: EdgeInsets.only(left: 40.w),
