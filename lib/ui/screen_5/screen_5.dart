@@ -24,7 +24,7 @@ class _FifthScreenState extends State<FifthScreen> {
       backgroundColor: AppColors.C_FFFFFF,
       appBar: const GlobalAppBar(),
       body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30.w),
+        margin: EdgeInsets.symmetric(horizontal: 30.w),
           child: Column(
             children: [
               SizedBox(
