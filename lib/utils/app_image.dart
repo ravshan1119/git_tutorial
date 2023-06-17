@@ -21,4 +21,6 @@ class AppImages {
   static const String noFavorite = 'assets/svg/no_favorite.svg';
   static const String search = 'assets/svg/search.svg';
   static const String smile = 'assets/svg/smile.svg';
+  static const String arrow = 'assets/svg/arrow.svg';
+  static const String heart = 'assets/svg/heart.svg';
 }

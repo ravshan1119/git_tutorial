@@ -60,28 +60,24 @@ class _ProductsState extends State<Products> {
                     ],
                   ),
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 17),
-                      child: const Text(
-                        "\$ 1.9",
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.C_4CBB5E,
-                            fontFamily: "Raleway"),
-                      ),
-                    ),
-                  ],
-                ),
               ],
             ),
             Positioned(
-                top: 17,
-                right: 17,
-                child: SvgPicture.asset(AppImages.noFavorite)),
+              top: 17,
+              right: 17,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(100),
+                  color: AppColors.C_EC534A
+                ),
+                height: 25,
+                width: 25,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: SvgPicture.asset(AppImages.heart)),
+                ),
+              ),
+            ),
             Positioned(
                 bottom: 0,
                 right: 0,
@@ -96,6 +92,19 @@ class _ProductsState extends State<Products> {
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
                     color: AppColors.C_777777,
+                    fontFamily: "Raleway"),
+              ),
+            ),
+
+            Positioned(
+              bottom: 8,
+              left: 30,
+              child: const Text(
+                "\$ 1.9",
+                style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: AppColors.C_4CBB5E,
                     fontFamily: "Raleway"),
               ),
             ),
