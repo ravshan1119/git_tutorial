@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:git_tutorial/ui/home/home_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:git_tutorial/ui/screen_4/screen_4.dart';
 
 void main(){
@@ -11,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FourthScreen(),
-    );
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        builder: (context, child) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: FourthScreen(),
+          );
+        });
   }
 }

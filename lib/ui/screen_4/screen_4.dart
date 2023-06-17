@@ -7,12 +7,13 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class FourthScreen extends StatefulWidget {
   const FourthScreen({super.key});
-
   @override
   State<FourthScreen> createState() => _FourthScreenState();
+
 }
 
 class _FourthScreenState extends State<FourthScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
