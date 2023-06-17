@@ -46,6 +46,20 @@ class _AllScreenButtonState extends State<AllScreenButton> {
             ),
             SizedBox(height: 50,),
             Button(
+              onPressed: () {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  clipBehavior: Clip.hardEdge,
+                  backgroundColor: Colors.transparent,
+                  context: context,
+                  builder: (context) {
+                    return  FourthScreen();
+                  },
+                );
+              },
+            ),
+            SizedBox(height: 50,),
+            Button(
               onPressed: () {},
             ),
             SizedBox(height: 50,),
