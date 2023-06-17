@@ -1,75 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:git_tutorial/ui/screen_4/show_modal_bottom_sheet.dart';
 import 'package:git_tutorial/utils/app_image.dart';
 import 'package:git_tutorial/widgets/global_app_bar.dart';
+import 'package:git_tutorial/widgets/global_control.dart';
 import 'package:git_tutorial/widgets/global_search_field.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../utils/app_colors.dart';
 
-class SearchResultHorizontal extends StatefulWidget {
-  const SearchResultHorizontal({Key? key}) : super(key: key);
+class FifthScreen extends StatefulWidget {
+  const FifthScreen({Key? key}) : super(key: key);
 
   @override
-  State<SearchResultHorizontal> createState() => _SearchResultHorizontalState();
+  State<FifthScreen> createState() => _FifthScreenState();
 }
 
-class _SearchResultHorizontalState extends State<SearchResultHorizontal> {
+class _FifthScreenState extends State<FifthScreen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: AppColors.C_FFFFFF,
-      appBar: GlobalAppBar(),
+      appBar: const GlobalAppBar(),
       body: Container(
-          margin: EdgeInsets.symmetric(horizontal: 34),
+          margin: EdgeInsets.symmetric(horizontal: 30.w),
           child: Column(
             children: [
               SizedBox(
-                height: height * (40 / 812),
+                height: 40.h,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GlobalSearchField(title: "Search Groceries"),
-                  // SizedBox(width: width * (25/375),),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 30,
-                    ),
-                    child: Container(
-                        width: width * (50 / 375),
-                        height: height * (50 / 812),
-                        decoration: BoxDecoration(
-                          color: AppColors.C_E5E5E5,
-                          borderRadius: BorderRadius.circular(18),
-                        ),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.C_E5E5E5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18),
-                            ),
-                          ),
-                          child: SvgPicture.asset(AppImages.filtr),
-                          onPressed: () {},
-                        )),
+                  const GlobalSearchField(title: "Sweet Fruit"),
+                  ZoomTapAnimation(
+                    child: GlobalControl(onTap: () {
+                      showModalBottomSheet(
+                        isScrollControlled: true,
+                        clipBehavior: Clip.hardEdge,
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        builder: (context) {
+                          return  FourthScreen();
+                        },
+                      );
+                    },),
                   ),
                 ],
               ),
               SizedBox(
-                height: height * (25 / 812),
+                height: 25.h,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Found 20 Results",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge!
-                        .copyWith(color: AppColors.C_194B38),
-                  ),
-                  SizedBox(
-                    width: width * (132 / 375),
+                        .copyWith(color: AppColors.C_194B38,fontSize: 20,fontWeight: FontWeight.w700),
                   ),
                   GestureDetector(
                     child: SvgPicture.asset(AppImages.menuList),
@@ -77,109 +68,8 @@ class _SearchResultHorizontalState extends State<SearchResultHorizontal> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: height * (25 / 812),
-              ),
-              Expanded(
-                child: GridView(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1, childAspectRatio: 3),
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          color: AppColors.C_F1F4F3,
-                          borderRadius: BorderRadius.circular(23)),
-                      child: Stack(children: [
-                        Row(children: [
-                          Image.asset(
-                            AppImages.mango,
-                            width: 80,
-                            height: 80,
-                          ),
-                          Column(
-                            children: [
-SizedBox(height: 20,),
-                                 Text(
-                                   "Mango",
-                                   style: Theme.of(context)
-                                       .textTheme
-                                       .titleLarge!
-                                       .copyWith(
-                                           color: AppColors.C_194B38, fontSize: 15),
-                                 ),SizedBox(height: 10,),
-                                 RichText(
-                                   text: TextSpan(
-                                       text: '\$ 1.',
-                                       style: Theme.of(context)
-                                           .textTheme
-                                           .headlineSmall!
-                                           .copyWith(color: AppColors.C_194B38),
-                                       children: [
-                                         TextSpan(
-                                           text: "8",
-                                           style: Theme.of(context)
-                                               .textTheme
-                                               .titleSmall!
-                                               .copyWith(
-                                                   color: AppColors.C_194B38,
-                                                   fontSize: 19),
-                                         ),
-                                         TextSpan(
-                                           text: '/kg',
-                                           style: Theme.of(context)
-                                               .textTheme
-                                               .bodySmall!
-                                               .copyWith(
-                                                   color: AppColors.C_9C9C9C,
-                                                   fontSize: 13),
-                                         ),
-                                       ]),
-                                 )
-
-                            ],
-                          )
-                        ]),
-                      ]),
-                    )
-                  ],
-                ),
-              )
             ],
           )),
     );
   }
 }
-
-//
-
-//
-// SizedBox(
-// width: width * (20 / 375),
-// ),
-// Column(
-// mainAxisAlignment: MainAxisAlignment.center,
-// children: [
-//
-// SizedBox(
-// height: 10,
-// ),
-//
-//
-// ],
-// ), Spacer(),
-// Column(
-// children: [
-// Image.asset(AppImages.select,width: width * (90/375),height: height * (90/812),),
-// ],),
-//
-// Spacer(),
-// Column(
-// mainAxisAlignment: MainAxisAlignment.end,
-// crossAxisAlignment: CrossAxisAlignment.end,
-// children: [
-//
-// SvgPicture.asset(AppImages.addTovar),
-// ],)
-//
-// ],
-// ),]

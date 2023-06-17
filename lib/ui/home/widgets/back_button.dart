@@ -60,7 +60,7 @@ class _ButtonState extends State<Button> with SingleTickerProviderStateMixin {
           width: 60,
           height: 40,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(20),
             color: Colors.white,
             border: Border.all(color: Colors.grey),
           ),
