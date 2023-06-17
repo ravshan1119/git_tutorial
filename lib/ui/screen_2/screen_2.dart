@@ -39,7 +39,7 @@ class _Screen2State extends State<Screen2> {
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 21, vertical: 11),
-                          child: SvgPicture.asset(AppImages.arrowAppBar),
+                          child: SvgPicture.asset(AppImages.arrow),
                         ),
                       ),
                       onTap: () {},

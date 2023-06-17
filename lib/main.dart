@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:git_tutorial/ui/screen_2/screen_2.dart';
 import 'package:git_tutorial/ui/screen_5/screen_5.dart';
 
 void main(){
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            home: FifthScreen(),
+            home: Screen2(),
           );
         });
   }
