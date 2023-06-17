@@ -6,7 +6,12 @@ import 'package:git_tutorial/utils/app_image.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class Products extends StatefulWidget {
-  const Products({Key? key}) : super(key: key);
+  Products({Key? key, required this.image, required this.name, required this.kg}) : super(key: key);
+  bool check = true;
+
+  final String image;
+  final String name;
+  final String kg;
 
   @override
   State<Products> createState() => _ProductsState();
@@ -36,7 +41,7 @@ class _ProductsState extends State<Products> {
                           height: 120.h,
                           width: 140.h,
                           child: Image.asset(
-                            AppImages.mango,
+                            widget.image,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -44,14 +49,14 @@ class _ProductsState extends State<Products> {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 17, bottom: 5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 17, bottom: 5),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Mango",
-                        style: TextStyle(
+                        widget.name,
+                        style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,
                             color: AppColors.C_194B38,
@@ -63,18 +68,26 @@ class _ProductsState extends State<Products> {
               ],
             ),
             Positioned(
-              top: 17,
-              right: 17,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(100),
-                  color: AppColors.C_EC534A
-                ),
-                height: 25,
-                width: 25,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: SvgPicture.asset(AppImages.heart)),
+              top: 15,
+              right: 15,
+              child: ZoomTapAnimation(
+                onTap: () {
+                  setState(() {
+                    widget.check = !widget.check;
+                  });
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color:
+                        widget.check ? AppColors.C_EC534A : AppColors.C_E2E2E2,
+                  ),
+                  height: 25,
+                  width: 25,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: SvgPicture.asset(AppImages.heart)),
+                  ),
                 ),
               ),
             ),
@@ -85,7 +98,7 @@ class _ProductsState extends State<Products> {
                     child: SvgPicture.asset(AppImages.addTovar))),
             Positioned(
               bottom: 6,
-              left: 45.w,
+              left: 50.w,
               child: const Text(
                 "/kg",
                 style: TextStyle(
@@ -95,13 +108,12 @@ class _ProductsState extends State<Products> {
                     fontFamily: "Raleway"),
               ),
             ),
-
             Positioned(
               bottom: 8,
-              left: 30,
-              child: const Text(
-                "\$ 1.9",
-                style: TextStyle(
+              left: 20,
+              child:  Text(
+                "\$ ${widget.kg}",
+                style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: AppColors.C_4CBB5E,
