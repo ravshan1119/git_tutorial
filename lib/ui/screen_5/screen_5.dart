@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:git_tutorial/ui/screen_4/show_modal_bottom_sheet.dart';
+import 'package:git_tutorial/ui/screen_5/widget/widget.dart';
 import 'package:git_tutorial/utils/app_image.dart';
 import 'package:git_tutorial/widgets/global_app_bar.dart';
 import 'package:git_tutorial/widgets/global_control.dart';
@@ -65,9 +66,16 @@ class _FifthScreenState extends State<FifthScreen> {
                   GestureDetector(
                     child: SvgPicture.asset(AppImages.menuList),
                     onTap: () {},
-                  ),
-                ],
-              ),
+                  ),],
+              ),SizedBox(height: 25,),
+              WidgetStack(image: AppImages.mango, fruitName: "Mango", priceTitle: "\$ 1.", priceSubTitle: "8", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
+        // SizedBox(height: 12,),
+              WidgetStack(image: AppImages.grape, fruitName: "Grape", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
+              // SizedBox(height: 12,),
+              WidgetStack(image: AppImages.strawberry, fruitName: "Strawberry", priceTitle: "\$ 2.", priceSubTitle: "5", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
+              // SizedBox(height: 12,),
+              WidgetStack(image: AppImages.avocado, fruitName: "Avocado", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
+
             ],
           )),
     );
