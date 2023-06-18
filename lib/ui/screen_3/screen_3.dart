@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:git_tutorial/modul/Item.dart';
 import 'package:git_tutorial/ui/screen_3/widgets/contaner_product.dart';
 import 'package:git_tutorial/ui/screen_3/widgets/contaner_product_mine.dart';
+import 'package:git_tutorial/ui/screen_5/screen_5.dart';
 import 'package:git_tutorial/widgets/global_app_bar.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../modul/data_repository.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_image.dart';
@@ -20,32 +23,33 @@ class ThirdScreen extends StatefulWidget {
 double remember = 215;
 
 class _ThirdScreenState extends State<ThirdScreen> {
-
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double hidth = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const GlobalAppBar(),
       body: Column(
         children: [
+          SizedBox(
+            height: 41.h,
+          ),
           Row(
             children: [
-              const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: GlobalSearchField(
-                    title: 'Sweet fruit',
-                  )),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: const GlobalSearchField(
+                  title: 'Sweet fruit',
+                ),
+              ),
               GlobalControl(
                 onTap: () {},
               ),
             ],
           ),
-          const SizedBox(
-            height: 25,
+          SizedBox(
+            height: 25.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -56,14 +60,24 @@ class _ThirdScreenState extends State<ThirdScreen> {
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
-                GestureDetector(
-                  child: SvgPicture.asset(AppImages.menuList),
-                  onTap: () {},
-                ),
+                ZoomTapAnimation(
+                  onTap: (){
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const FifthScreen();
+                        },
+                      ),
+                    );
+                  },
+                    child: SvgPicture.asset(AppImages.menu)),
               ],
             ),
           ),
-          const SizedBox(height: 20,),
+          SizedBox(
+            height: 20.h,
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Row(
@@ -72,25 +86,38 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      ...List.generate(Repository.data.length, (index){
+                      ...List.generate(Repository.data.length, (index) {
                         Iteam item = Repository.data[index];
                         return Column(
                           children: [
-                            const SizedBox(height: 2,),
-                            index==0?ProductsHet(image: item.image, name: item.nameFruit, kg: item.kg):ProductsMine(image: item.image, name: item.nameFruit, kg: item.kg)
+                            SizedBox(
+                              height: 2.h,
+                            ),
+                            index == 0
+                                ? ProductsHet(
+                                    image: item.image,
+                                    name: item.nameFruit,
+                                    kg: item.kg)
+                                : ProductsMine(
+                                    image: item.image,
+                                    name: item.nameFruit,
+                                    kg: item.kg,
+                                  ),
                           ],
                         );
-                      }
-                      ),
+                      }),
                     ],
                   ),
                   Column(
                     children: [
-                      ...List.generate(Repository.data.length, (index){
+                      ...List.generate(Repository.data.length, (index) {
                         Iteam item = Repository.data[index];
                         return Column(
                           children: [
-                            ProductsMine(image: item.image, name: item.nameFruit, kg: item.kg)
+                            ProductsMine(
+                                image: item.image,
+                                name: item.nameFruit,
+                                kg: item.kg)
                           ],
                         );
                       }),
@@ -102,6 +129,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
           )
         ],
       ),
+      backgroundColor: AppColors.C_FFFFFF,
     );
   }
 }

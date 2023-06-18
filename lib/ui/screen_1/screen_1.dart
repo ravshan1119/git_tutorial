@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:git_tutorial/ui/home/widgets/back_button.dart';
 import 'package:git_tutorial/ui/screen_1/widget/last_seen_widget.dart';
+import 'package:git_tutorial/ui/screen_4/widgets/text_btn.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../utils/app_colors.dart';
@@ -113,67 +114,83 @@ class _FirstScreenState extends State<FirstScreen> {
                     SizedBox(
                       width: 30.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.mango),
+                    const GlobalImageWidget(imagePath: AppImages.mango),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.avocado),
+                    const GlobalImageWidget(imagePath: AppImages.avocado),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.sweetFruit),
+                    const GlobalImageWidget(imagePath: AppImages.sweetFruit),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.strawberry),
+                    const GlobalImageWidget(imagePath: AppImages.strawberry),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.meat),
+                    const GlobalImageWidget(imagePath: AppImages.meat),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.grape),
+                    const GlobalImageWidget(imagePath: AppImages.grape),
                     SizedBox(
                       width: 9.w,
                     ),
-                    GlobalImageWidget(imagePath: AppImages.lemon),
+                    const GlobalImageWidget(imagePath: AppImages.lemon),
                   ],
                 ),
               ),
               SizedBox(
                 height: 20.h,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              SingleChildScrollView(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30.w),
+                      child: const Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Title",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 15,
+                              fontFamily: "Raleway",
+                              color: AppColors.C_194B38),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 30.w),
+                      child: const ZoomTapAnimation(
+                        child: Text(
+                          "remove",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                              fontFamily: "Raleway",
+                              color: AppColors.C_EC534A),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 13,),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
                 children: [
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: const Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Title",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 15,
-                            fontFamily: "Raleway",
-                            color: AppColors.C_194B38),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: const ZoomTapAnimation(
-                      child: Text(
-                        "remove",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 15,
-                            fontFamily: "Raleway",
-                            color: AppColors.C_EC534A),
-                      ),
-                    ),
-                  ),
+                  TxtButton(text: "Mango", onPressed: (){}),
+                  TxtButton(text: "Avacado", onPressed: (){}),
+                  TxtButton(text: "Sweet Fruit", onPressed: (){}),
+                  TxtButton(text: "Grape", onPressed: (){}),
+                  TxtButton(text: "Bread", onPressed: (){}),
+                  TxtButton(text: "PineApple", onPressed: (){}),
+                  TxtButton(text: "Raw meat", onPressed: (){}),
                 ],
               ),
             ],
