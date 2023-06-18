@@ -48,6 +48,7 @@ class _WidgetStackState extends State<WidgetStack> {
             ],
           ),
               SizedBox(width: 50,),
+          Spacer(),
           Column(
             children: [
               SizedBox(height: 15,),
@@ -62,12 +63,12 @@ class _WidgetStackState extends State<WidgetStack> {
                     height: 24,
                     width: 24,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(60),
+                      borderRadius: BorderRadius.circular(70),
                       color: AppColors.C_1F4F3.withOpacity(0.9),
-                      border: Border.all(color: AppColors.C_EC534A),
+                      border: Border.all(color: AppColors.C_EC534A.withOpacity(0.3),width: 0.5),
                     ),child: Container(
-                    width: 15,
-                    height: 15,
+                    width: 20,
+                    height: 20,
                     decoration: BoxDecoration(
                       color: AppColors.C_EC534A,
                       borderRadius: BorderRadius.circular(20),
@@ -88,11 +89,14 @@ class _WidgetStackState extends State<WidgetStack> {
                     height: 24,
                     decoration: BoxDecoration(
                         color: AppColors.C_1F4F3.withOpacity(0.9),
-                        border: Border.all(color: AppColors.C_EC534A,width: 1)
+                        // border: Border.all(color: AppColors.C_EC534A,width: 1)
                     ),child: Container(
                     width: 15,
                     height: 15,
-                    color: AppColors.C_FFFFFF,
+                    decoration: BoxDecoration(
+                      color: AppColors.C_FFFFFF,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: SvgPicture.asset(AppImages.favo),

@@ -91,7 +91,7 @@ class _FifthScreenState extends State<FifthScreen> {
 
               Expanded(
                 child: GridView(
-                  
+                  physics: BouncingScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       childAspectRatio: 3.2, crossAxisCount: 1,mainAxisSpacing: 10),
                   children: [
