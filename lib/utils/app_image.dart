@@ -24,4 +24,6 @@ class AppImages {
   static const String smile = 'assets/svg/smile.svg';
   static const String arrow = 'assets/svg/arrow.svg';
   static const String heart = 'assets/svg/heart.svg';
+  static const String favo = 'assets/svg/favo.svg';
+  static const String favo1 = 'assets/svg/favo1.svg';
 }
