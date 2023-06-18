@@ -21,8 +21,8 @@ class _AllScreenButtonState extends State<AllScreenButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
-        elevation: 70,
+        backgroundColor: Colors.blueGrey,
+        elevation: 0,
         title: const Text(
           "Check Screen",
           style: TextStyle(
@@ -62,6 +62,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       )
                     ],
@@ -88,6 +89,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       )
                     ],
@@ -109,6 +111,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       )
                     ],
@@ -137,6 +140,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       )
                     ],
@@ -159,6 +163,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                         style: TextStyle(
                           fontWeight: FontWeight.w700,
                           fontSize: 20,
+                          color: Colors.white,
                         ),
                       )
                     ],
@@ -169,6 +174,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
           ),
         ],
       ),
+      backgroundColor: Colors.blueGrey,
     );
   }
 }

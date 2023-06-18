@@ -17,6 +17,7 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -162,13 +163,15 @@ class _FirstScreenState extends State<FirstScreen> {
                   ),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 30.w),
-                    child: Text(
-                      "remove",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          fontFamily: "Raleway",
-                          color: AppColors.C_EC534A),
+                    child: const ZoomTapAnimation(
+                      child: Text(
+                        "remove",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            fontFamily: "Raleway",
+                            color: AppColors.C_EC534A),
+                      ),
                     ),
                   ),
                 ],
