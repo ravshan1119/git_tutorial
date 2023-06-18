@@ -15,7 +15,6 @@ class GlobalImageWidget extends StatefulWidget {
 
 class _GlobalImageWidgetState extends State<GlobalImageWidget> {
   bool isTapped = false;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
