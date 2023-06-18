@@ -70,24 +70,8 @@ class _FifthScreenState extends State<FifthScreen> {
                     child: SvgPicture.asset(AppImages.menuList),
                     onTap: () {},
                   ),],
-              ),SizedBox(height: 25,),
+              ),SizedBox(height: 25.h),
 
-                  // GridView(
-                  //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  //     crossAxisCount: 1
-                  //   ),
-                  //   children:[ Column(
-                  //     children: [
-                  //       WidgetStack(image: AppImages.mango, fruitName: "Mango", priceTitle: "\$ 1.", priceSubTitle: "8", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.grape, fruitName: "Grape", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.strawberry, fruitName: "Strawberry", priceTitle: "\$ 2.", priceSubTitle: "5", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.avocado, fruitName: "Avocado", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //     ],
-                  //   ),]
-                  // ),
 
               Expanded(
                 child: GridView(

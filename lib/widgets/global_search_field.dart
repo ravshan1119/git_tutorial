@@ -28,22 +28,22 @@ class GlobalSearchField extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(20.0.r),
               borderSide: BorderSide.none, // Remove border color
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(20.0.r),
               borderSide: BorderSide.none, // Remove border color
             ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20.0),
+              borderRadius: BorderRadius.circular(20.0.r),
               borderSide: BorderSide.none, // Remove border color
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(30.0.r),
               borderSide: BorderSide.none, // Remove border color
             ),
-            fillColor: AppColors.C_194B38.withOpacity(0.06),
+            fillColor: AppColors.C_194B38.withOpacity(0.06.r),
             filled: true,
           ),
         ));
