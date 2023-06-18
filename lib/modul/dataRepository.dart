@@ -51,6 +51,13 @@ class Repository {
         nameFruit: 'lemon',
         kg: '90'
     ),
+  ];
+  static List<Iteam> data2 = [
+    Iteam(
+        image: "assets/image/lemon.png",
+        nameFruit: 'lemon',
+        kg: '90'
+    ),
     Iteam(
         image: "assets/image/mango.png",
         nameFruit: 'lemon',
@@ -76,5 +83,26 @@ class Repository {
         nameFruit: 'lemon',
         kg: '90'
     ),
+    Iteam(
+        image: "assets/image/lemon.png",
+        nameFruit: 'lemon',
+        kg: '90'
+    ),
+    Iteam(
+        image: "assets/image/mango.png",
+        nameFruit: 'lemon',
+        kg: '90'
+    ),
+    Iteam(
+        image: "assets/image/avocado.png",
+        nameFruit: 'lemon',
+        kg: '90'
+    ),
+    Iteam(
+        image: "assets/image/lemon.png",
+        nameFruit: 'lemon',
+        kg: '90'
+    ),
+
   ];
 }

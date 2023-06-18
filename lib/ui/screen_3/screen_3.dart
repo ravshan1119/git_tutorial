@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:git_tutorial/modul/Item.dart';
+import 'package:git_tutorial/ui/screen_3/widgets/contaner_product.dart';
+import 'package:git_tutorial/ui/screen_3/widgets/contaner_product_mine.dart';
 import 'package:git_tutorial/widgets/global_app_bar.dart';
 import '../../modul/dataRepository.dart';
 import '../../utils/app_colors.dart';
@@ -18,8 +20,11 @@ class Screen3 extends StatefulWidget {
   double remember = 215;
 
 class _Screen3State extends State<Screen3> {
+
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double hidth = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: const GlobalAppBar(),
       body: Column(
@@ -58,72 +63,42 @@ class _Screen3State extends State<Screen3> {
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          const SizedBox(height: 20,),
           Expanded(
-            child: GridView(
-                scrollDirection: Axis.vertical,
-                padding:  EdgeInsets.all(20),
-                gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 21,
-                  crossAxisSpacing: 15,
-                  childAspectRatio: 0.8,
-                  mainAxisExtent: 260
-                ),
+            child: SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ...List.generate(Repository.data.length, (index) {
-                    Iteam item = Repository.data[index];
-                    if(index%2==0){
-                      remember = 340;
-                    }else{
-                      remember = 300;
-                    }
-                    return Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(28),
-                        color: AppColors.C_E2E2E2
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ...List.generate(Repository.data.length, (index){
+                        Iteam item = Repository.data[index];
+                        return Column(
+                          children: [
+                            const SizedBox(height: 2,),
+                            index==0?ProductsHet(image: item.image, name: item.nameFruit, kg: item.kg):ProductsMine(image: item.image, name: item.nameFruit, kg: item.kg)
+                          ],
+                        );
+                      }
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              children: [
-                                Image.asset(item.image),
-                                Text(item.nameFruit),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(item.kg,style: TextStyle(
-                                      color: Colors.green,
-                                      fontSize: 20
-                                    ),),
-                                    Text('/kg',style: TextStyle(
-                                        color: AppColors.C_4B4B4B,
-                                        fontSize: 12
-                                    ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            height: 41,
-                            width: 53,
-                            decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(28))
-                            ),
-                            child: const Icon(Icons.ac_unit),
-                          ),
-                        ],
-                      ),
-                    );
-                  })
-                ]),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ...List.generate(Repository.data.length, (index){
+                        Iteam item = Repository.data[index];
+                        return Column(
+                          children: [
+                            ProductsMine(image: item.image, name: item.nameFruit, kg: item.kg)
+                          ],
+                        );
+                      }),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),
