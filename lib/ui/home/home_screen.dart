@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:git_tutorial/ui/home/widgets/back_button.dart';
+import 'package:git_tutorial/ui/screen_1/screen_1.dart';
 import 'package:git_tutorial/ui/screen_2/screen_2.dart';
 import 'package:git_tutorial/ui/screen_5/screen_5.dart';
 
@@ -62,24 +63,18 @@ class _AllScreenButtonState extends State<AllScreenButton> {
             SizedBox(height: 50,),
             Button(
               onPressed: () {
-                showModalBottomSheet(
-                  isScrollControlled: true,
-                  clipBehavior: Clip.hardEdge,
-                  backgroundColor: Colors.transparent,
-                  context: context,
-                  builder: (context) {
-                    return  Screen2();
-                  },
-                );
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                  return Screen2();
+                }));
               },
             ),
             SizedBox(height: 50,),
             Button(
-              onPressed: () {},
-            ),
-            SizedBox(height: 50,),
-            Button(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                  return Screen1();
+                }));
+              },
             ),
           ],
         ),
