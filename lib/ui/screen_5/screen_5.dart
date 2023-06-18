@@ -43,7 +43,7 @@ class _FifthScreenState extends State<FifthScreen> {
                       showModalBottomSheet(
                         isScrollControlled: true,
                         clipBehavior: Clip.hardEdge,
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: AppColors.C_194B38.withOpacity(0.5),
                         context: context,
                         builder: (context) {
                           return  FourthScreen();
@@ -66,28 +66,14 @@ class _FifthScreenState extends State<FifthScreen> {
                         .titleLarge!
                         .copyWith(color: AppColors.C_194B38,fontSize: 20,fontWeight: FontWeight.w700),
                   ),
-                  GestureDetector(
-                    child: SvgPicture.asset(AppImages.menuList),
-                    onTap: () {},
+                  ZoomTapAnimation(
+                    child: GestureDetector(
+                      child: SvgPicture.asset(AppImages.menuList),
+                      onTap: () {},
+                    ),
                   ),],
               ),SizedBox(height: 25,),
 
-                  // GridView(
-                  //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  //     crossAxisCount: 1
-                  //   ),
-                  //   children:[ Column(
-                  //     children: [
-                  //       WidgetStack(image: AppImages.mango, fruitName: "Mango", priceTitle: "\$ 1.", priceSubTitle: "8", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.grape, fruitName: "Grape", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.strawberry, fruitName: "Strawberry", priceTitle: "\$ 2.", priceSubTitle: "5", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //       // SizedBox(height: 12,),
-                  //       WidgetStack(image: AppImages.avocado, fruitName: "Avocado", priceTitle: "\$ 2.", priceSubTitle: "1", iconFavorite: AppImages.select, iconAdd: AppImages.addTovar),
-                  //     ],
-                  //   ),]
-                  // ),
 
               Expanded(
                 child: GridView(

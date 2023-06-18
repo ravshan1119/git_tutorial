@@ -1,165 +1,124 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:git_tutorial/ui/home/home_screen.dart';
 import 'package:git_tutorial/utils/app_colors.dart';
 import 'package:git_tutorial/utils/app_image.dart';
+import 'package:git_tutorial/widgets/global_app_bar.dart';
 import 'package:git_tutorial/widgets/global_control.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../widgets/global_products.dart';
 import '../../widgets/global_search_field.dart';
 
-class Screen2 extends StatefulWidget {
-  const Screen2({Key? key}) : super(key: key);
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({Key? key}) : super(key: key);
 
   @override
-  State<Screen2> createState() => _Screen2State();
+  State<SecondScreen> createState() => _SecondScreenState();
 }
 
-class _Screen2State extends State<Screen2> {
+class _SecondScreenState extends State<SecondScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: ListView(
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.h),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 41.h, bottom: 40.h),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        ZoomTapAnimation(
-                          child: Container(
-                            height: 40.h,
-                            width: 60.w,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(100),
-                                border: Border.all(color: AppColors.C_777777)),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 21, vertical: 11),
-                              child: SvgPicture.asset(AppImages.arrow),
-                            ),
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AllScreenButton()));
-                          },
-                        ),
-                        const Text(
-                          "Search Groceries",
-                          style: TextStyle(
-                            fontFamily: "Montserrat",
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.C_4B4B4B,
-                          ),
-                        ),
-                        ZoomTapAnimation(
-                            child: SvgPicture.asset(AppImages.bag)),
-                      ],
+    return Scaffold(
+      appBar: const GlobalAppBar(),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.h),
+            child: Column(
+              children: [
+                const SizedBox(height: 40,),
+                Row(
+                  children: [
+                    const GlobalSearchField(
+                      title: "Rotten Fruit",
                     ),
-                  ),
-                  Row(
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    GlobalControl(onTap: () {}),
+                  ],
+                ),
+                SizedBox(
+                  height: 98.h,
+                ),
+                SizedBox(
+                  height: 150.h,
+                  width: 192.w,
+                  child: Column(
                     children: [
-                      GlobalSearchField(
-                        title: "Rotten Fruit",
+                      Container(
+                        decoration: BoxDecoration(
+                            color: AppColors.C_EBF4F1,
+                            borderRadius: BorderRadius.circular(23)),
+                        height: 70.h,
+                        width: 70.h,
+                        child: Center(
+                            child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Image.asset(AppImages.smilePNG),
+                        )),
                       ),
                       SizedBox(
-                        width: 16.w,
+                        height: 15.h,
                       ),
-                      GlobalControl(onTap: () {}),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 98.h,
-                  ),
-                  SizedBox(
-                    height: 150.h,
-                    width: 192.w,
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: AppColors.C_EBF4F1,
-                              borderRadius: BorderRadius.circular(23)),
-                          height: 70.h,
-                          width: 70.h,
-                          child: Center(
-                              child: Padding(
-                            padding: const EdgeInsets.all(20),
-                            child: Image.asset(AppImages.smilePNG),
-                          )),
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        const Text(
-                          "Item not Found",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w800,
-                              color: AppColors.C_194B38,
-                              fontFamily: "Raleway"),
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        const Text(
-                          "Try search with a different keyword",
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.C_9C9C9C,
-                              fontFamily: "Raleway"),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 70.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Popular",
+                      const Text(
+                        "Item not Found",
                         style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
                             color: AppColors.C_194B38,
                             fontFamily: "Raleway"),
                       ),
-                      ZoomTapAnimation(child: SvgPicture.asset(AppImages.menu)),
+                      SizedBox(
+                        height: 15.h,
+                      ),
+                      const Text(
+                        "Try search with a different keyword",
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.C_9C9C9C,
+                            fontFamily: "Raleway"),
+                      ),
                     ],
                   ),
-                  SizedBox(
-                    height: 250.h,
-                    width: double.infinity - 60,
-                    child: GridView(
-                      physics: BouncingScrollPhysics(),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          childAspectRatio: 0.80, crossAxisCount: 2),
-                      children: [
-                        ...List.generate(
-                            products.length, (index) => products[index])
-                      ],
+                ),
+                SizedBox(
+                  height: 70.h,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Popular",
+                      style: TextStyle(
+                          fontSize: 20.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.C_194B38,
+                          fontFamily: "Raleway"),
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    ZoomTapAnimation(child: SvgPicture.asset(AppImages.menu)),
+                  ],
+                ),
+                SizedBox(
+                  height: 280.h,
+                  width: double.infinity - 60,
+                  child: GridView(
+                    physics: const BouncingScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 0.80, crossAxisCount: 2),
+                    children: [
+                      ...List.generate(
+                          products.length, (index) => products[index])
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
-      ),
+      backgroundColor: AppColors.C_FFFFFF,
     );
   }
 }
