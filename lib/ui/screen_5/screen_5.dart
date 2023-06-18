@@ -43,7 +43,7 @@ class _FifthScreenState extends State<FifthScreen> {
                       showModalBottomSheet(
                         isScrollControlled: true,
                         clipBehavior: Clip.hardEdge,
-                        backgroundColor: Colors.transparent,
+                        backgroundColor: AppColors.C_194B38.withOpacity(0.5),
                         context: context,
                         builder: (context) {
                           return  FourthScreen();
@@ -66,9 +66,11 @@ class _FifthScreenState extends State<FifthScreen> {
                         .titleLarge!
                         .copyWith(color: AppColors.C_194B38,fontSize: 20,fontWeight: FontWeight.w700),
                   ),
-                  GestureDetector(
-                    child: SvgPicture.asset(AppImages.menuList),
-                    onTap: () {},
+                  ZoomTapAnimation(
+                    child: GestureDetector(
+                      child: SvgPicture.asset(AppImages.menuList),
+                      onTap: () {},
+                    ),
                   ),],
               ),SizedBox(height: 25.h),
 

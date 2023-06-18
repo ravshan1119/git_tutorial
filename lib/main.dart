@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:git_tutorial/ui/screen_2/screen_2.dart';
-import 'package:git_tutorial/ui/screen_5/screen_5.dart';
-
 import 'package:git_tutorial/ui/home/home_screen.dart';
 
 
@@ -19,7 +15,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         designSize: const Size(375, 812),
         builder: (context, child) {
-          return MaterialApp(
+          return const MaterialApp(
             debugShowCheckedModeBanner: false,
             home: AllScreenButton(),
           );

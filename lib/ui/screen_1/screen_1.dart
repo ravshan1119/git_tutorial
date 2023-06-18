@@ -9,14 +9,15 @@ import '../../utils/app_colors.dart';
 import '../../utils/app_image.dart';
 import '../home/home_screen.dart';
 
-class Screen1 extends StatefulWidget {
-  const Screen1({Key? key}) : super(key: key);
+class FirstScreen extends StatefulWidget {
+  const FirstScreen({Key? key}) : super(key: key);
 
   @override
-  State<Screen1> createState() => _Screen1State();
+  State<FirstScreen> createState() => _FirstScreenState();
 }
 
-class _Screen1State extends State<Screen1> {
+class _FirstScreenState extends State<FirstScreen> {
+  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,11 +41,11 @@ class _Screen1State extends State<Screen1> {
       ),
       body: Column(
         children: [
-          const SizedBox(
-            height: 11,
+          SizedBox(
+            height: 11.h,
           ),
           Container(
-            margin: const EdgeInsets.symmetric(horizontal: 30),
+            margin: EdgeInsets.symmetric(horizontal: 30.w),
             child: TextField(
               keyboardType: TextInputType.text,
               textInputAction: TextInputAction.search,
@@ -56,7 +57,7 @@ class _Screen1State extends State<Screen1> {
                     bottom: 17.h,
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 18),
+                    padding: EdgeInsets.only(right: 18.w),
                     child: SvgPicture.asset(AppImages.search),
                   ),
                 ),
@@ -64,19 +65,19 @@ class _Screen1State extends State<Screen1> {
                 hintStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: AppColors.C_194B38, fontWeight: FontWeight.w600),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
                   borderSide: BorderSide.none,
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
                   borderSide: BorderSide.none,
                 ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
                   borderSide: BorderSide.none,
                 ),
                 focusedErrorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(30.r),
                   borderSide: BorderSide.none,
                 ),
                 fillColor: AppColors.C_194B38.withOpacity(0.06),
@@ -86,11 +87,11 @@ class _Screen1State extends State<Screen1> {
           ),
           Column(
             children: [
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 30),
+                margin: EdgeInsets.symmetric(horizontal: 30.w),
                 child: const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -102,36 +103,52 @@ class _Screen1State extends State<Screen1> {
                           color: AppColors.C_194B38),
                     )),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
-              const SingleChildScrollView(
+              SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    SizedBox(width: 30,),
+                    SizedBox(
+                      width: 30.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.mango),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.avocado),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.sweetFruit),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.strawberry),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.meat),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.grape),
-                    SizedBox(width: 9,),
+                    SizedBox(
+                      width: 9.w,
+                    ),
                     GlobalImageWidget(imagePath: AppImages.lemon),
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20.h,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 30),
+                    margin: EdgeInsets.symmetric(horizontal: 30.w),
                     child: const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -145,14 +162,16 @@ class _Screen1State extends State<Screen1> {
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Text(
-                      "remove",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          fontFamily: "Raleway",
-                          color: AppColors.C_EC534A),
+                    margin: EdgeInsets.symmetric(horizontal: 30.w),
+                    child: const ZoomTapAnimation(
+                      child: Text(
+                        "remove",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15,
+                            fontFamily: "Raleway",
+                            color: AppColors.C_EC534A),
+                      ),
                     ),
                   ),
                 ],
