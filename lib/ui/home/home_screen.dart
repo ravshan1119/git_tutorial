@@ -3,6 +3,7 @@ import 'package:git_tutorial/ui/home/widgets/back_button.dart';
 import 'package:git_tutorial/ui/screen_2/screen_2.dart';
 import 'package:git_tutorial/ui/screen_5/screen_5.dart';
 
+import '../screen_3/screen_3.dart';
 import '../screen_4/show_modal_bottom_sheet.dart';
 
 class AllScreenButton extends StatefulWidget {
@@ -75,7 +76,16 @@ class _AllScreenButtonState extends State<AllScreenButton> {
             ),
             SizedBox(height: 50,),
             Button(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Screen3();
+                    },
+                  ),
+                );
+              },
             ),
             SizedBox(height: 50,),
             Button(
