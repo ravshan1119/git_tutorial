@@ -8,16 +8,16 @@ import '../../utils/app_image.dart';
 import '../../widgets/global_control.dart';
 import '../../widgets/global_search_field.dart';
 
-class Screen3 extends StatefulWidget {
-  const Screen3({Key? key}) : super(key: key);
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({Key? key}) : super(key: key);
 
   @override
-  State<Screen3> createState() => _Screen3State();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
 double remember = 215;
 
-class _Screen3State extends State<Screen3> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
