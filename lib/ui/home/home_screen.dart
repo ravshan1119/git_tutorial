@@ -21,6 +21,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.blueGrey,
         elevation: 0,
         title: const Text(
