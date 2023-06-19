@@ -9,6 +9,7 @@ import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 import '../../widgets/global_products.dart';
 import '../../widgets/global_search_field.dart';
+import '../screen_4/show_modal_bottom_sheet.dart';
 
 class SecondScreen extends StatefulWidget {
   const SecondScreen({Key? key}) : super(key: key);
@@ -36,7 +37,19 @@ class _SecondScreenState extends State<SecondScreen> {
                     SizedBox(
                       width: 16.w,
                     ),
-                    GlobalControl(onTap: () {}),
+                    ZoomTapAnimation(
+                      child: GlobalControl(onTap: () {
+                        showModalBottomSheet(
+                          isScrollControlled: true,
+                          clipBehavior: Clip.hardEdge,
+                          backgroundColor: AppColors.C_194B38.withOpacity(0.5),
+                          context: context,
+                          builder: (context) {
+                            return  FourthScreen();
+                          },
+                        );
+                      }),
+                    ),
                   ],
                 ),
                 SizedBox(
