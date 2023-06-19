@@ -31,7 +31,7 @@ class GlobalAppBar extends StatelessWidget implements PreferredSize {
           },
         ),
         title: Padding(
-          padding: EdgeInsets.only(left: 40.w),
+          padding: EdgeInsets.only(left: 50.w),
           child: Text(
             "Search Groceries",
             style: Theme.of(context)

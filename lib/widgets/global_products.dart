@@ -78,12 +78,12 @@ class _ProductsState extends State<Products> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
+                    borderRadius: BorderRadius.circular(100.r),
                     color:
                         widget.check ? AppColors.C_EC534A : AppColors.C_E2E2E2,
                   ),
-                  height: 25,
-                  width: 25,
+                  height: 25.h,
+                  width: 25.w,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(child: SvgPicture.asset(AppImages.heart)),

@@ -50,7 +50,7 @@ class _ProductsState extends State<ProductsHet> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 17, bottom: 5),
+                  padding: EdgeInsets.only(left: 17.w, bottom: 5.h),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,8 +68,8 @@ class _ProductsState extends State<ProductsHet> {
               ],
             ),
             Positioned(
-              top: 15,
-              right: 15,
+              top: 15.h,
+              right: 15.w,
               child: ZoomTapAnimation(
                 onTap: () {
                   setState(() {
@@ -78,7 +78,7 @@ class _ProductsState extends State<ProductsHet> {
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(100),
+                    borderRadius: BorderRadius.circular(100.r),
                     color:
                     widget.check ? AppColors.C_EC534A : AppColors.C_E2E2E2,
                   ),
@@ -97,7 +97,7 @@ class _ProductsState extends State<ProductsHet> {
                 child: ZoomTapAnimation(
                     child: SvgPicture.asset(AppImages.addTovar))),
             Positioned(
-              bottom: 6,
+              bottom: 6.h,
               left: 50.w,
               child: const Text(
                 "/kg",
@@ -109,8 +109,8 @@ class _ProductsState extends State<ProductsHet> {
               ),
             ),
             Positioned(
-              bottom: 8,
-              left: 20,
+              bottom: 8.h,
+              left: 20.w,
               child:  Text(
                 "\$ ${widget.kg}",
                 style: const TextStyle(

@@ -6,7 +6,9 @@ import 'package:git_tutorial/utils/app_image.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class ProductsMine extends StatefulWidget {
-  ProductsMine({Key? key, required this.image, required this.name, required this.kg}) : super(key: key);
+  ProductsMine(
+      {Key? key, required this.image, required this.name, required this.kg})
+      : super(key: key);
   bool check = true;
 
   final String image;
@@ -21,12 +23,13 @@ class _ProductsState extends State<ProductsMine> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),
       child: Container(
         height: 200.h,
         width: 130.w,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(28), color: AppColors.C_F1F4F3),
+            borderRadius: BorderRadius.circular(28.r),
+            color: AppColors.C_F1F4F3),
         child: Stack(
           children: [
             Column(
@@ -50,7 +53,7 @@ class _ProductsState extends State<ProductsMine> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 17, bottom: 5),
+                  padding: EdgeInsets.only(left: 17.w, bottom: 5.h),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -68,8 +71,8 @@ class _ProductsState extends State<ProductsMine> {
               ],
             ),
             Positioned(
-              top: 15,
-              right: 15,
+              top: 15.h,
+              right: 15.w,
               child: ZoomTapAnimation(
                 onTap: () {
                   setState(() {
@@ -80,10 +83,10 @@ class _ProductsState extends State<ProductsMine> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color:
-                    widget.check ? AppColors.C_EC534A : AppColors.C_E2E2E2,
+                        widget.check ? AppColors.C_EC534A : AppColors.C_E2E2E2,
                   ),
-                  height: 25,
-                  width: 25,
+                  height: 25.h,
+                  width: 25.w,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(child: SvgPicture.asset(AppImages.heart)),
@@ -97,7 +100,7 @@ class _ProductsState extends State<ProductsMine> {
                 child: ZoomTapAnimation(
                     child: SvgPicture.asset(AppImages.addTovar))),
             Positioned(
-              bottom: 6,
+              bottom: 6.h,
               left: 50.w,
               child: const Text(
                 "/kg",
@@ -109,9 +112,9 @@ class _ProductsState extends State<ProductsMine> {
               ),
             ),
             Positioned(
-              bottom: 8,
-              left: 20,
-              child:  Text(
+              bottom: 8.h,
+              left: 20.w,
+              child: Text(
                 "\$ ${widget.kg}",
                 style: const TextStyle(
                     fontSize: 14,
