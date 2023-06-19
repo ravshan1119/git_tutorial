@@ -9,6 +9,7 @@ import 'package:git_tutorial/widgets/global_control.dart';
 import 'package:git_tutorial/widgets/global_search_field.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../utils/app_colors.dart';
+import '../screen_3/screen_3.dart';
 
 class FifthScreen extends StatefulWidget {
   const FifthScreen({Key? key}) : super(key: key);
@@ -69,7 +70,16 @@ class _FifthScreenState extends State<FifthScreen> {
                   ZoomTapAnimation(
                     child: GestureDetector(
                       child: SvgPicture.asset(AppImages.menuList),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const ThirdScreen();
+                            },
+                          ),
+                        );
+                      },
                     ),
                   ),],
               ),SizedBox(height: 25,),
