@@ -12,6 +12,7 @@ import '../../utils/app_colors.dart';
 import '../../utils/app_image.dart';
 import '../../widgets/global_control.dart';
 import '../../widgets/global_search_field.dart';
+import '../screen_4/show_modal_bottom_sheet.dart';
 
 class ThirdScreen extends StatefulWidget {
   const ThirdScreen({Key? key}) : super(key: key);
@@ -40,8 +41,20 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   title: 'Sweet fruit',
                 ),
               ),
-              GlobalControl(
-                onTap: () {},
+              ZoomTapAnimation(
+                child: GlobalControl(
+                  onTap: () {
+                    showModalBottomSheet(
+                      isScrollControlled: true,
+                      clipBehavior: Clip.hardEdge,
+                      backgroundColor: AppColors.C_194B38.withOpacity(0.5),
+                      context: context,
+                      builder: (context) {
+                        return  FourthScreen();
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),
