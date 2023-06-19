@@ -1,46 +1,55 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:git_tutorial/modul/Item.dart';
+import 'package:git_tutorial/ui/screen_3/widgets/contaner_product.dart';
+import 'package:git_tutorial/ui/screen_3/widgets/contaner_product_mine.dart';
+import 'package:git_tutorial/ui/screen_5/screen_5.dart';
 import 'package:git_tutorial/widgets/global_app_bar.dart';
+import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 import '../../modul/data_repository.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_image.dart';
 import '../../widgets/global_control.dart';
 import '../../widgets/global_search_field.dart';
 
-class Screen3 extends StatefulWidget {
-  const Screen3({Key? key}) : super(key: key);
+class ThirdScreen extends StatefulWidget {
+  const ThirdScreen({Key? key}) : super(key: key);
 
   @override
-  State<Screen3> createState() => _Screen3State();
+  State<ThirdScreen> createState() => _ThirdScreenState();
 }
 
 double remember = 215;
 
-class _Screen3State extends State<Screen3> {
+class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const GlobalAppBar(),
       body: Column(
         children: [
+          SizedBox(
+            height: 41.h,
+          ),
           Row(
             children: [
-              const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 30),
-                  child: GlobalSearchField(
-                    title: 'Sweet fruit',
-                  )),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
+                child: const GlobalSearchField(
+                  title: 'Sweet fruit',
+                ),
+              ),
               GlobalControl(
                 onTap: () {},
               ),
             ],
           ),
-          const SizedBox(
-            height: 25,
+          SizedBox(
+            height: 25.h,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,82 +60,76 @@ class _Screen3State extends State<Screen3> {
                       fontSize: 20,
                       fontWeight: FontWeight.w700),
                 ),
-                GestureDetector(
-                  child: SvgPicture.asset(AppImages.menuList),
-                  onTap: () {},
-                ),
+                ZoomTapAnimation(
+                  onTap: (){
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const FifthScreen();
+                        },
+                      ),
+                    );
+                  },
+                    child: SvgPicture.asset(AppImages.menu)),
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
+          SizedBox(
+            height: 20.h,
           ),
           Expanded(
-            child: GridView(
-                scrollDirection: Axis.vertical,
-                padding:  EdgeInsets.all(20),
-                gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 21,
-                    crossAxisSpacing: 15,
-                    childAspectRatio: 0.8,
-                    mainAxisExtent: 260
-                ),
+            child: SingleChildScrollView(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ...List.generate(Repository.data.length, (index) {
-                    Iteam item = Repository.data[index];
-                    if(index%2==0){
-                      remember = 340;
-                    }else{
-                      remember = 300;
-                    }
-                    return Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(28),
-                          color: AppColors.C_E2E2E2
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              children: [
-                                Image.asset(item.image),
-                                Text(item.nameFruit),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(item.kg,style: TextStyle(
-                                        color: Colors.green,
-                                        fontSize: 20
-                                    ),),
-                                    Text('/kg',style: TextStyle(
-                                        color: AppColors.C_4B4B4B,
-                                        fontSize: 12
-                                    ),
-                                    )
-                                  ],
-                                ),
-                              ],
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ...List.generate(Repository.data.length, (index) {
+                        Iteam item = Repository.data[index];
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: 2.h,
                             ),
-                          ),
-                          Container(
-                            height: 41,
-                            width: 53,
-                            decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(28))
-                            ),
-                            child: const Icon(Icons.ac_unit),
-                          ),
-                        ],
-                      ),
-                    );
-                  })
-                ]),
+                            index == 0
+                                ? ProductsHet(
+                                    image: item.image,
+                                    name: item.nameFruit,
+                                    kg: item.kg)
+                                : ProductsMine(
+                                    image: item.image,
+                                    name: item.nameFruit,
+                                    kg: item.kg,
+                                  ),
+                          ],
+                        );
+                      }),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ...List.generate(Repository.data.length, (index) {
+                        Iteam item = Repository.data[index];
+                        return Column(
+                          children: [
+                            ProductsMine(
+                                image: item.image,
+                                name: item.nameFruit,
+                                kg: item.kg)
+                          ],
+                        );
+                      }),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           )
         ],
       ),
+      backgroundColor: AppColors.C_FFFFFF,
     );
   }
 }

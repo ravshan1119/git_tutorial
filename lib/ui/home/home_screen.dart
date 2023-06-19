@@ -102,7 +102,7 @@ class _AllScreenButtonState extends State<AllScreenButton> {
                       Button(
                         onPressed: () {
                           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                            return Screen3();
+                            return const ThirdScreen();
                           }));
                         },
                       ),

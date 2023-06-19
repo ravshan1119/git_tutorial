@@ -72,14 +72,15 @@ class _FifthScreenState extends State<FifthScreen> {
                       onTap: () {},
                     ),
                   ),],
-              ),SizedBox(height: 25.h),
+              ),SizedBox(height: 25,),
 
 
               Expanded(
-                child: GridView(
+                child: GridView.count(
                   physics: BouncingScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 3.2, crossAxisCount: 1,mainAxisSpacing: 10),
+
+                      childAspectRatio: 3.2,
+                  crossAxisCount: 1,mainAxisSpacing: 10,
                   children: [
                     ...List.generate(
                         productsWidget.length, (index) => productsWidget[index])
